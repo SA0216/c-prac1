@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+class GCD
+{
+	int no1, no2;
+	public:
+	    void input()
+	{
+		cout<<"Enter two number: "<<endl;
+		cin>>no1>>no2;
+	}
+    void findGCD()
+	{
+		int g;
+		for(int i=1; i<=no1; i++)
+		{
+			if(no1% i==0 && no2 % i==0)
+			g=i;
+		}
+		cout<<"GCD= "<<g;
+	}
+};
+int main()
+{
+	GCD d;
+	d.input();
+	d.findGCD();
+	return 0;
+}
