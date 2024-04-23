@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+int m=100;
+int n=200;
+int main()
+{
+	int m=50;
+	cout<<"Local m= "<<m<<endl;
+	cout<<"Outer m= "<<::m<<endl;
+	cout<<"Outer n= "<<n<<endl;
+	{
+		int m=5;
+		cout<<"inner m= "<<m<<endl;
+	    cout<<"Outer m= "<<::m<<endl;
+	}
+	::m=m+15;
+	m=m+n;
+	n++;
+	cout<<"Local m= "<<m<<endl;
+	cout<<"Outer m= "<<::m<<endl;
+	cout<<"Outer n= "<<n<<endl;
+	return 0;
+}
