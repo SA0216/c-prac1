@@ -1,0 +1,49 @@
+//Demonstration of overridding
+#include <iostream>
+using namespace std;
+class Rectangle
+{
+	protected:
+		int len,br;
+	public:
+		void setvalue(int a,int b)
+		{
+			len=a;
+			br=b;
+		}
+		int area()
+		{
+			int a=len*br;
+			return a;
+		}
+};
+class Box: public Rectangle
+{
+	int ht;
+	public:
+		void setvalue(int a,int b,int h)
+		{
+			len=a;
+			br=b;
+			ht=h;
+		}
+		int area()
+		{
+			int a1=2*Rectangle::area();
+			int a2=2*len*ht;
+			int a3=2*br*ht;
+			int a=a1+a2+a3;
+			return a;
+		}
+};
+int main()
+{
+	int p,q,r,ar;
+	cout<<"Enter length,breadth,height:\n";
+	cin>>p>>q>>r;
+	Box b;
+	b.setvalue(p,q,r);
+	ar=b.area();
+	cout<<"Surface Area="<<ar;
+	return 0;
+}
