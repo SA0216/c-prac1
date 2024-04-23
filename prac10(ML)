@@ -1,0 +1,61 @@
+//multilevel inheritance
+#include <iostream>
+using namespace std;
+class person
+{
+	protected:
+		char name[40];
+		public:
+			void in_person()
+			{
+				cout<<"Enter Name:";
+				cin.getline(name,40);
+			}
+			void out_person()
+			{
+				cout<<"Name: "<<name<<endl;
+			}
+};
+class Employee: public person
+{
+	protected:
+		int salary;
+		public:
+			void in_salary()
+			{
+				in_person();
+				cout<<"Enter salary: ";
+				cin>>salary;
+			}
+			void out_salary()
+			{
+				out_person();
+				cout<<"Salary: "<<salary<<endl;
+			}
+};
+class Manager: public Employee
+{
+	int allw;
+	public:
+		void input()
+		{
+			in_salary();
+			cout<<"Enter allowance:";
+			cin>>allw;
+		}
+		void output()
+		{
+			out_salary();
+			cout<<"Allowance: "<<allw<<endl;
+			int total=salary+allw;
+			cout<<"Total: "<<total<<endl;
+		}
+};
+int main()
+{
+	Manager mgr;
+	mgr.input();
+	cout<<"Data....\n";
+	mgr.output();
+	return 0;
+}
