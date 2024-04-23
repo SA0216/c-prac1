@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+	int no1,no2,s;
+	int *p,*q;
+	cout<<"Enter Two Numbers: ";
+	cin>>no1>>no2;
+	p=&no1;
+	q=&no2;
+	s=*p+*q;
+	cout<<"Sum="<<s;
+	return 0;
+}
