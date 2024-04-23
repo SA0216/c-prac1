@@ -1,0 +1,31 @@
+//1-D Array Example
+#include <iostream>
+using namespace std;
+class array
+{
+	int ar[6];
+	public: void input()
+	{
+		cout<<"Enter 6 number: "<<endl;
+		for(int i=0; i<=6; i++)
+		cin>>ar[i];
+	}
+	int largest()
+	{
+		int y=ar[0];
+		for(int i=1;i<=6; i++)
+		{
+			if(ar[i]>y)
+			y=ar[i];
+		}
+		return y;
+	}
+};
+int main()
+{
+	int m;
+	array a;
+	a.input();
+	cout<<"largest no.= "<<m;
+	return 0;
+}
