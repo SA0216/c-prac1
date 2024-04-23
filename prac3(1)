@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+
+class largest 
+{
+    int a, b, c;
+    public:
+        void input() 
+	    {
+            cout << "Enter Three Numbers" << endl;
+            cin >> a >> b >> c;
+        }
+
+    int getlargest() 
+	{
+        int y;
+        if (a > b && a > c)
+            y = a;
+        else if (b > c)
+            y = b;
+        else
+            y = c;
+        return y;
+    }
+};
+
+int main() 
+{
+    largest d;
+    d.input();
+    int v = d.getlargest();
+    cout << "Largest no.=" << v << endl;
+    return 0;
+}
