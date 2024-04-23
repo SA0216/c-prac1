@@ -1,0 +1,38 @@
+//Copy Constructor
+#include <iostream>
+using namespace std;
+class Demo
+{
+	public:
+		int a;
+		float b;
+		Demo()
+		{
+			/*empty*/
+		}
+		Demo(Demo&ref)
+		{
+			cout<<"copy constr\n";
+			a=ref.a;
+			b=ref.b;
+		}
+};
+Demo f(Demo m)
+{
+	cout<<"fn starts\n";
+	m.a++;
+	m.b+=5;
+	cout<<"fn returning\n";
+	return m;
+}
+int main()
+{
+	Demo q;
+	q.a=2;
+	q.b=5;
+	Demo p=q;
+	cout<<p.a<<","<<p.b<<endl;
+	p=f(q);
+    cout << p.a << "," << p.b << endl;
+	return 0;
+}
