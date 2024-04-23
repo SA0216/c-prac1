@@ -1,0 +1,32 @@
+//Default & Parameterized constructor
+#include <iostream>
+using namespace std;
+class Demo
+{
+	public:
+		int a,b;
+		Demo()
+		{
+			a=b=0;
+			cout<<"Default constr\n";
+		}
+		Demo(int x, int y)
+		{
+			a=x;
+			b=y;
+			cout<<"parameterized constr\n";
+		}
+		void add()
+		{
+			int c= a+b;
+			cout<<"Sum="<<c<<endl;
+		}
+};
+int main()
+{
+	Demo m;
+	m.add();
+	Demo y(5,7);
+	y.add();
+	return 0;
+}
