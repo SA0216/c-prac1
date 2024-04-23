@@ -1,0 +1,21 @@
+//Demonstration of overloading
+#include <iostream>
+using namespace std;
+void area(int l, int b)
+{
+	int a=l*b;
+	cout<<"Area of Rectangle="<<a<<endl;
+}
+void area(float r)
+{
+	float a=3.14*r*r;
+	cout<<"Area of circle="<<a<<endl;
+}
+int main()
+{
+	int m=2, n=5;
+	float x=10;
+	area(m,n);
+	area(x);
+	return 0;
+}
